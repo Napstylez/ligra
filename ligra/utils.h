@@ -28,7 +28,7 @@
 #include <stdlib.h>
 #include "parallel.h"
 using namespace std;
-
+#include <cstdint>
 // Needed to make frequent large allocations efficient with standard
 // malloc implementation.  Otherwise they are allocated directly from
 // vm.
