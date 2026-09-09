@@ -103,6 +103,14 @@ struct MIS_Filter {
 template <class vertex>
 void Compute(graph<vertex>& GA, commandLine P) {
   const intE n = GA.n;
+  //+++++++++++++++++
+  //manually inserted
+  //+++++++++++++++++
+  static long callNum = 0;
+  callNum++;
+  //+++++++++++++++++
+  //insertion end
+  //+++++++++++++++++
   bool checkCorrectness = P.getOptionValue("-checkCorrectness");
 
   //flags array: UNDECIDED means "undecided", CONDITIONALLY_IN means
@@ -128,6 +136,17 @@ void Compute(graph<vertex>& GA, commandLine P) {
     else cout << "incorrect\n";
   }
 #endif
+  //+++++++++++++++++
+  //manually inserted
+  //+++++++++++++++++
+  if (callNum == 1) {
+    long misSize = 0;
+    for (long i = 0; i < n; i++) if (flags[i] == IN) misSize++;
+    cout << "MIS size = " << misSize << "\n";
+  }
+  //+++++++++++++++++
+  //insertion end
+  //+++++++++++++++++
   free(flags);
   Frontier.del();
 }
