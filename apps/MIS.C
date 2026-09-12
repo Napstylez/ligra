@@ -142,7 +142,7 @@ void Compute(graph<vertex>& GA, commandLine P) {
   if (callNum == 1) {
     long misSize = 0;
     for (long i = 0; i < n; i++) if (flags[i] == IN) misSize++;
-    cout << "MIS size = " << misSize << "\n";
+    cout << "MIS size : " << misSize << "\n";
   }
   //+++++++++++++++++
   //insertion end
